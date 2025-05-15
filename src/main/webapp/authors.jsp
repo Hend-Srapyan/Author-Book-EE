@@ -24,6 +24,8 @@
     <th>phone</th>
     <th>dob</th>
     <th>gender</th>
+    <th>delete</th>
+    <th>edit</th>
   </tr>
 
 <% for (Author author : authors) { %>
@@ -34,6 +36,8 @@
       <td><%= author.getPhone()%> </td>
       <td><%= DateUtil.fromDateToString(author.getDateOfBirthday())%> </td>
       <td><%= author.getGender().name()%> </td>
+      <td><a href ="/deleteAuthor?id=<%= author.getId()%>">Delete</a></td>
+      <td><a href="/editAuthor?id=<%= author.getId()%>">Edit</a></td>
     </tr>
 <% } %>
 </table>

@@ -24,6 +24,8 @@
         <th>qty</th>
         <th>author</th>
         <th>created_at</th>
+        <th>delete</th>
+        <th>edit</th>
     </tr>
 
     <% for (Book book : books) { %>
@@ -34,6 +36,8 @@
             <th><%= book.getQty()%></th>
             <th><%= book.getAuthor().getName()%></th>
             <th><%= DateUtil.fromDateToString(book.getCreatedAt())%></th>
+            <th><a href="/deleteBook?id=<%=book.getId()%>">Delete</a></th>
+            <th><a href="/editBook?id=<%=book.getId()%>">Edit</a></th>
         </tr>
     <% }%>
 </table>
